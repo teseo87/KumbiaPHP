@@ -216,6 +216,30 @@ final class Router
         return $cont;
     }
 
+    /**
+     * Envia el valor de un atributo o el array con todos los atributos y sus valores del router
+     * Mirar el atributo vars del router
+     * ej.
+     * <code>Router::get()</code>
+     *
+     * @param ninguno
+     * @return array con todas los atributos y sus valores
+     *
+     * ej.
+     * <code>Router::get('controller')</code>
+     *
+     * @param string  un atributo: route, module, controller, action, parameters o routed
+     * @return string con el valor del atributo
+     */
+    public static function get($var = null)
+    {
+        if ($var) {
+            return self::$_vars[$var];
+        } else {
+            return self::$_vars;
+        }
+    }
+
 	/**
      * Redirecciona la ejecución internamente o externamente con un routes propio
      * 
