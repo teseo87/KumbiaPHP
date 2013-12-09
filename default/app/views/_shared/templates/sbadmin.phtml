@@ -31,7 +31,8 @@
       <div id="wrapper">
           <?php View::partial('sbadmin/sidebar') ?>
           <div id="page-wrapper">
-              <?php View::partial('sbadmin/intro',FALSE,array('titulo' => $titulo, 'subtitulo' => $subtitulo)) ?>
+              <!-- Pasaje de parámetros al partial para el título el subtítulo y la referencia al Agregar -->
+              <?php View::partial('sbadmin/intro',FALSE,array('titulo' => $titulo, 'subtitulo' => $subtitulo , 'modelo' => $modelo)) ?>
               <?php View::content() ?>
               <?php View::partial('sbadmin/footer') ?>
           </div>

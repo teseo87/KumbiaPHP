@@ -1,0 +1,26 @@
+<div class="table-responsive">
+    <?php Load::models('categoriadetrabajo'); Load::models('socio'); echo View::content(); $titulo = "Ofertas de Trabajo"; $subtitulo = "Ofertas de Trabajo de Socios del BDT"; $modelo = "oferta";?>
+    <table class="table table-bordered table-hover table-striped tablesorter">
+        <thead>
+            <tr>
+                <th>Categoría de Trabajo <i class="fa fa-sort"></i></th>
+                <th>Socio <i class="fa fa-sort"></i></th>
+                <th>Detalle <i class="fa fa-sort"></i></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($listItems->items as $item) : ?>
+            <tr>
+                <td><?php echo Categoriadetrabajo::getName($item->categoriadetrabajo_id) ?></td>
+                <td><?php echo Socio::getName($item->socio_id) ?></td>
+                <td><?php echo $item->detalle ?></td>
+                <td>
+                    <button type="button" class="btn btn-success" onclick="window.location ='/KumbiaPHP/oferta/edit/<?php echo $item->id?>/';">Ver</button>
+                    <button type="button" class="btn btn-danger" onclick="window.location ='/KumbiaPHP/oferta/del/<?php echo $item->id?>/';">Eliminar</button>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

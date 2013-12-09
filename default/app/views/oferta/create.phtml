@@ -1,0 +1,49 @@
+<?php
+echo View::content();
+$titulo = "Oferta";
+$subtitulo = "Ingresar una Oferta de Trabajo al BDT";
+$modelo = "oferta";
+?>
+
+<?php echo Html::includeCss(); ?>
+
+<?php echo Form::open(); // por defecto llama a la misma url      ?>
+
+<div class="row">
+
+    <div class="col-lg-3 text-right"> 
+        <label>Socio</label>
+    </div>    
+    <div class="col-lg-4 text-center"> 
+<?php echo Form::dbSelect('oferta.socio_id'); ?>
+    </div>
+</div>
+
+
+
+<div class="row">
+
+    <div class="col-lg-3 text-right"> 
+        <label>Categoría de Trabajo</label>
+    </div>    
+    <div class="col-lg-4 text-center"> 
+<?php echo Form::dbSelect('oferta.categoriadetrabajo_id'); ?>
+    </div>
+</div>
+
+
+
+<div class="row">
+
+    <div class="col-lg-3 text-right"> 
+        <label>Detalle</label>
+    </div>    
+    <div class="col-lg-4 text-center"> 
+<?php echo Form::textarea('oferta.detalle') ?>
+    </div>
+</div> 
+
+<button type="submit" class="btn btn-default">Submit Button</button>
+<button type="reset" class="btn btn-default">Reset Button</button>
+
+<?php echo Form::close() ?>

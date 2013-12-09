@@ -10,4 +10,13 @@ class Socio extends ActiveRecord
    {
        return $this->paginate("page: $page", "per_page: $ppage", 'order: id desc');
    }
+   
+   /**
+     * Método para obtener el nombre del item
+     */
+    public static function getName($id) {
+        $item = Load::model('socio')->find_first($id);
+        return $item->nombre;
+    }
+
 }
