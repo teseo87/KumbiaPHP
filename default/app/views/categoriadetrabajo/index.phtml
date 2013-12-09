@@ -1,0 +1,22 @@
+<div class="table-responsive">
+    <?php echo View::content(); $titulo = "Categoría de Trabajo"; $subtitulo = "Padrón de Categorías de Trabajo del BDT";?>
+    <table class="table table-bordered table-hover table-striped tablesorter">
+        <thead>
+            <tr>
+                <th>Nombre <i class="fa fa-sort"></i></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($listItems->items as $item) : ?>
+            <tr>
+                <td><?php echo $item->nombre ?></td>
+                <td>
+                    <button type="button" class="btn btn-success" onclick="window.location ='/KumbiaPHP/categoriadetrabajo/edit/<?php echo $item->id?>/';">Ver</button>
+                    <button type="button" class="btn btn-danger" onclick="window.location ='/KumbiaPHP/categoriadetrabajo/del/<?php echo $item->id?>/';">Eliminar</button>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

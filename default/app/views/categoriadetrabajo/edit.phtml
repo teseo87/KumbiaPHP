@@ -1,0 +1,23 @@
+<?php echo View::content();
+$titulo = "Categoría de Trabajo"; $subtitulo = "Editar Categoría de Trabajo del BDT"; ?>
+
+<?php echo Html::includeCss(); ?>
+
+<?php echo Form::open(); // por defecto llama a la misma url     ?>
+
+<div class="row">
+
+    <div class="col-lg-3 text-right"> 
+        <label>Nombre</label>
+    </div>    
+    <div class="col-lg-4 text-center"> 
+        <?php echo Form::text('categoriadetrabajo.nombre') ?>
+    </div>
+</div>
+
+
+<button type="submit" class="btn btn-default">Submit Button</button>
+<button type="reset" class="btn btn-default">Reset Button</button>
+
+<?php echo Form::hidden('categoriadetrabajo.id') ?>
+<?php echo Form::close() ?>
