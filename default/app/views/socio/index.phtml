@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <?php echo View::content(); $titulo = "Socios"; $subtitulo = "Padrón de Socios del BDT";?>
+    <?php Load::models('tipodocumento'); echo View::content(); $titulo = "Socios"; $subtitulo = "Padrón de Socios del BDT";?>
     <table class="table table-bordered table-hover table-striped tablesorter">
         <thead>
             <tr>
@@ -13,7 +13,7 @@
             <?php foreach ($listItems->items as $item) : ?>
             <tr>
                 <td><?php echo $item->nombre ?></td>
-                <td><?php echo $item->tipo_doc ?></td>
+                <td><?php echo Tipodocumento::getName($item->tipodocumento_id) ?></td>
                 <td><?php echo $item->nro_doc ?></td>
                 <td>
                     <button type="button" class="btn btn-success" onclick="window.location ='/KumbiaPHP/socio/edit/<?php echo $item->id?>/';">Ver</button>
